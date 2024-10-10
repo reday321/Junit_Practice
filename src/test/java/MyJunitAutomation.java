@@ -146,6 +146,16 @@ public class MyJunitAutomation {
 
     }
 
+    @Test
+    public void UploadImage(){
+        driver.get("https://demoqa.com/upload-download");
+        String relativePath = "//src//test//resources//Nobita.png";
+        String absolutePath = System.getProperty("user.dir") + relativePath;
+        driver.findElement(By.id("uploadFile")).sendKeys(absolutePath);
+
+    }
+
+
     //  @AfterAll
     public void Quit() {
         driver.quit();
